@@ -200,7 +200,8 @@ public:
 			case 2:
 			{
 				char q_reset;
-				cout << "\nAll saved data will be deleted and the program will be restored to defaults. Continue anyway? (Y/N) : ";
+				cout << "\nAll saved data will be deleted and the program will be restored to defaults.<<endl;
+				cout<<"Do you want to continue anyway? (Y/N) : ";
 				cin >> q_reset;
 				if (q_reset == 'Y' | q_reset == 'y')
 				{
@@ -236,7 +237,7 @@ public:
 		}
 		else
 		{
-			cout << "\n....Invalid Password....";
+			cout << "\n....Oops! Invalid Password....";
 			goto label_admin;
 		}
 	}
@@ -251,7 +252,7 @@ public:
 	{
 		char c = ' ';
 		string lib_pass = "";
-		cout << "\nEnter library password : ";
+		cout << "\nEnter Library Password : ";
 		while (c != 13)
 		{
 			c = _getch();
@@ -306,7 +307,7 @@ public:
 			case 4:
 			{
 				Sleep(500);
-				cout << "\n\nExiting ";
+				cout << "\n\nClosing ";
 				for (int i = 0; i <= 4; i++)
 				{
 					Sleep(500);
@@ -322,7 +323,7 @@ public:
 		}
 		else
 		{
-			cout << "\n....Wrong Password....";
+			cout << "\n....Oops, Wrong Password....";
 		}
 
 	}
@@ -412,7 +413,7 @@ public:
 			ir2.close();
 			remove("temp_id.dat");
 			remove("temp_id2.dat");
-			cout << "\nBook not available for issue.";
+			cout << "\nSorry, Book not available for issue.";
 		}
 	}
 
@@ -509,7 +510,7 @@ public:
 			}
 			else
 			{
-				cout << "\nNo such book have been issued.";
+				cout << "\nSorry, No such book have been issued.";
 			}
 			break;
 		}
@@ -522,7 +523,7 @@ public:
 			char temp_bn[50], temp[500], temp1[500];
 			fstream ir("issue_return.dat", ios::in);
 			fstream teir("issue_return.dat", ios::in);
-			cout << "\nEnter full book name : ";
+			cout << "\nEnter complete name of Book : ";
 			cin.ignore();
 			cin.getline(temp_bn, 50);
 			ir.seekg(0, ios::beg);
@@ -632,7 +633,7 @@ label_main:
 			cout << "\n3. Administrator Menu";
 			cout << "\n4. Issue and Return Section";
 			cout << "\n5. About";
-			cout << "\n6. Exit Program";
+			cout << "\n6. Close Program";
 
 			cout << "\nEnter your choice (1-6) : ";
 			cin >> choice;
@@ -656,7 +657,7 @@ label_main:
 				break;
 			case 6:
 				Sleep(500);
-				cout << "\n\nExiting ";
+				cout << "\n\nClosing ";
 				for (int i = 0; i <= 4; i++)
 				{
 					Sleep(500);
@@ -671,7 +672,7 @@ label_main:
 	}
 	else
 	{
-		cout << "\n....Invalid Password....";
+		cout << "\n....Oops! Invalid Password....";
 		goto label_main;
 	}
 }
